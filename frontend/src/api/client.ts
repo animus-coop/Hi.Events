@@ -4,8 +4,8 @@ import {isSsr} from "../utilites/helpers.ts";
 import {getConfig} from "../utilites/config.ts";
 
 const BASE_URL = isSsr()
-    ? getConfig('VITE_API_URL_SERVER')
-    : getConfig('VITE_API_URL_CLIENT');
+    ? "https://ticketera.animus.coop/api"
+    : "https://ticketera.animus.coop/api";
 const LOGIN_PATH = "/auth/login";
 const PREVIOUS_URL_KEY = 'previous_url';
 

@@ -12,8 +12,8 @@ if (existingToken) {
 
 publicApi.interceptors.request.use((config) => {
     const baseUrl = isSsr()
-        ? getConfig('VITE_API_URL_SERVER')
-        : getConfig('VITE_API_URL_CLIENT');
+        ? "https://ticketera.animus.coop/api"
+        : "https://ticketera.animus.coop/api";
 
     config.baseURL = `${baseUrl}/public`;
     return config;
