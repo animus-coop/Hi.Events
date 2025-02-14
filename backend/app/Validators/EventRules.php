@@ -11,7 +11,7 @@ trait EventRules
         $currencies = include __DIR__ . '/../../data/currencies.php';
 
         return array_merge($this->minimalRules(), [
-            'timezone' => ['timezone:all'],
+            'timezone' => ['required'],
             'organizer_id' => ['required', 'integer'],
             'currency' => [Rule::in(array_values($currencies))],
             // todo - Revisit the 50k character limit

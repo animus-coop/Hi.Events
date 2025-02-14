@@ -13,7 +13,7 @@ class AcceptInvitationRequest extends BaseRequest
             'first_name' => RulesHelper::REQUIRED_STRING,
             'last_name' => RulesHelper::REQUIRED_STRING,
             'password' => 'required|string|min:8|confirmed',
-            'timezone' => ['required', 'timezone:all'],
+            'timezone' => ['required'],
         ];
     }
 }
