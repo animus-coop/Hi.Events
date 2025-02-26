@@ -7,7 +7,7 @@ export default defineConfig({
     server: {
         hmr: {
             port: 24678,
-            protocol: "ws",
+            protocol: "wss",
         },
     },
     plugins: [
