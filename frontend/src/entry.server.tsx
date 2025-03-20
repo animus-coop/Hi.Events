@@ -64,7 +64,7 @@ export function createFetchRequest(
     req: express.Request,
     res: express.Response
 ): Request {
-    const origin = `https://localhost:8443`;
+    const origin = `https://ticketera.animus.coop`;
     const url = new URL(req.originalUrl || req.url, origin);
     const controller = new AbortController();
     res.on("close", () => controller.abort());

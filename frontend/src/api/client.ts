@@ -3,7 +3,7 @@ import {setAuthToken} from "../utilites/apiClient.ts";
 // import {isSsr} from "../utilites/helpers.ts";
 // import {getConfig} from "../utilites/config.ts";
 
-const BASE_URL = "https://localhost:8443/api";
+const BASE_URL = "https://ticketera.animus.coop/api";
 const LOGIN_PATH = "/auth/login";
 const PREVIOUS_URL_KEY = 'previous_url';
 

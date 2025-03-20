@@ -71,8 +71,8 @@ class CheckMercadoPagoAction extends BaseAction
         ];
 
         $backUrls = array(
-            'success' => 'https://localhost:8443/api/orders/payment/mercadopago/success',
-            'failure' => 'https://localhost:8443/api/orders/payment/mercadopago/failed'
+            'success' => env('APP_FRONTEND_URL') . '/api/orders/payment/mercadopago/success',
+            'failure' => env('APP_FRONTEND_URL') . '/api/orders/payment/mercadopago/failed'
         );
 
         $request = [
