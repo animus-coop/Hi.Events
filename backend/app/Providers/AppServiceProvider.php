@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
             );
         }
 
-        Model::preventLazyLoading(!app()->isProduction());
+        Model::preventLazyLoading(false);
 
         Relation::enforceMorphMap([
             EventDomainObject::class => Event::class,

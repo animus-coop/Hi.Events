@@ -50,6 +50,8 @@ use HiEvents\Http\Actions\Orders\MessageOrderAction;
 use HiEvents\Http\Actions\Orders\Payment\RefundOrderAction;
 use HiEvents\Http\Actions\Orders\Payment\Stripe\CreatePaymentIntentActionPublic;
 use HiEvents\Http\Actions\Orders\Payment\Stripe\GetPaymentIntentActionPublic;
+use HiEvents\Http\Actions\Orders\Payment\MercadoPago\MercadoPagoAction;
+use HiEvents\Http\Actions\Orders\Payment\MercadoPago\CheckMercadoPagoAction;
 use HiEvents\Http\Actions\Orders\ResendOrderConfirmationAction;
 use HiEvents\Http\Actions\Organizers\CreateOrganizerAction;
 use HiEvents\Http\Actions\Organizers\EditOrganizerAction;
@@ -207,6 +209,19 @@ $router->middleware(['auth:api'])->group(
         $router->get('/events/{event_id}/settings', GetEventSettingsAction::class);
         $router->put('/events/{event_id}/settings', EditEventSettingsAction::class);
         $router->patch('/events/{event_id}/settings', PartialEditEventSettingsAction::class);
+
+        # Verificar pago usando el short id del evento.
+        // $router->get('/foo', function () {
+        //     $mpAccessToken = env('MP_ACCESS_TOKEN');
+
+        // MercadoPago\MercadoPagoConfig::setAccessToken($mpAccessToken);
+
+        // MercadoPago\MercadoPagoConfig::setRuntimeEnviroment(MercadoPago\MercadoPagoConfig::LOCAL);
+        //     $client = new MercadoPago\Client\Payment\PaymentClient();
+        //     $search = new MercadoPago\Net\MPSearchRequest(1, 0, ['external_reference' => 'oTz1osyzowlmEU']);
+        //     $payment = $client->search($search);
+        //     dd($payment->results[0]);
+        // });
     }
 );
 
@@ -229,6 +244,10 @@ $router->prefix('/public')->group(
         // Stripe payment gateway
         $router->post('/events/{event_id}/order/{order_short_id}/stripe/payment_intent', CreatePaymentIntentActionPublic::class);
         $router->get('/events/{event_id}/order/{order_short_id}/stripe/payment_intent', GetPaymentIntentActionPublic::class);
+
+        // MercadoPago payment gateway
+        $router->post('/events/{event_id}/order/{order_short_id}/mercadopago/payment_intent', MercadoPagoAction::class);
+        $router->get('/events/orders/payment/mercadopago/callback', CheckMercadoPagoAction::class);
 
         $router->get('/events/{event_id}/questions', GetQuestionsPublicAction::class);
 

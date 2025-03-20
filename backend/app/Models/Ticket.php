@@ -6,7 +6,9 @@ namespace HiEvents\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use HiEvents\DomainObjects\Generated\TicketDomainObjectAbstract;
+
 
 class Ticket extends BaseModel
 {
@@ -36,5 +38,10 @@ class Ticket extends BaseModel
     public function tax_and_fees(): BelongsToMany
     {
         return $this->belongsToMany(TaxAndFee::class, 'ticket_taxes_and_fees');
+    }
+
+    public function attendee(): HasOne
+    {
+        return $this->hasOne(Attendee::class);
     }
 }

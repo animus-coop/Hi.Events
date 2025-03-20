@@ -52,4 +52,9 @@ class Order extends BaseModel
     {
         return [];
     }
+
+    public function payment(): HasOne
+    {
+        return $this->hasOne(StripePayment::class);
+    }
 }

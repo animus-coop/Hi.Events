@@ -99,14 +99,13 @@ export const orderClientPublic = {
     },
 
     findOrderStripePaymentIntent: async (eventId: number, orderShortId: string) => {
-        return await publicApi.get<StripePaymentIntent>(`events/${eventId}/order/${orderShortId}/stripe/payment_intent`);
+        return await publicApi.get<StripePaymentIntent>(`events/${eventId}/order/${orderShortId}/mercadopago/payment_intent`);
     },
 
     createStripePaymentIntent: async (eventId: number, orderShortId: string, sessionIdentifier: string) => {
         const response = await publicApi.post<{
-            client_secret: string,
-            account_id?: string,
-        }>(`events/${eventId}/order/${orderShortId}/stripe/payment_intent?session_identifier=${sessionIdentifier}`);
+            redirect_url: string
+        }>(`events/${eventId}/order/${orderShortId}/mercadopago/payment_intent?session_identifier=${sessionIdentifier}`);
         return response.data;
     },
 

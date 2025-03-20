@@ -1,7 +1,7 @@
 import {useParams} from "react-router-dom";
-import {loadStripe, Stripe} from "@stripe/stripe-js";
-import {Elements} from "@stripe/react-stripe-js";
-import StripeCheckoutForm from "../../../forms/StripeCheckoutForm";
+// import {loadStripe, Stripe} from "@stripe/stripe-js";
+// import {Elements} from "@stripe/react-stripe-js";
+// import StripeCheckoutForm from "../../../forms/StripeCheckoutForm";
 import {useCreateStripePaymentIntent} from "../../../../queries/useCreateStripePaymentIntent.ts";
 import {useEffect, useState} from "react";
 import {LoadingMask} from "../../../common/LoadingMask";
@@ -10,30 +10,22 @@ import {t} from "@lingui/macro";
 import {eventHomepagePath} from "../../../../utilites/urlHelper.ts";
 import {useGetEventPublic} from "../../../../queries/useGetEventPublic.ts";
 import {HomepageInfoMessage} from "../../../common/HomepageInfoMessage";
-import {getConfig} from "../../../../utilites/config.ts";
+// import {getConfig} from "../../../../utilites/config.ts";
 
 const Payment = () => {
     const {eventId, orderShortId} = useParams();
     const {
-        data: stripeData,
+        data: data,
         isFetched: isStripeFetched,
         error: stripePaymentIntentError
     } = useCreateStripePaymentIntent(eventId, orderShortId);
-    const [stripePromise, setStripePromise] = useState<Promise<Stripe | null>>();
     const {data: event} = useGetEventPublic(eventId);
 
     useEffect(() => {
-        if (!stripeData?.client_secret) {
-            return;
+        if (isStripeFetched && data?.redirect_url) {
+            window.location.href = data.redirect_url;
         }
-
-        const stripeAccount = stripeData?.account_id;
-        const options = stripeAccount ? {
-            stripeAccount: stripeAccount
-        } : {};
-
-        setStripePromise(loadStripe(getConfig('VITE_STRIPE_PUBLISHABLE_KEY') as string, options));
-    }, [stripeData]);
+    }, [data, isStripeFetched]);
 
     if (stripePaymentIntentError && event) {
         return (
@@ -49,23 +41,17 @@ const Payment = () => {
     }
 
     if (!isStripeFetched) {
-        return <LoadingMask/>;
+        return (
+            <CheckoutContent>
+                <HomepageInfoMessage
+                    message={t`Redirecting to payment portal...`}
+                />
+                <LoadingMask/>
+            </CheckoutContent>
+        );
     }
 
-    return (
-        <>
-            {(!stripePromise) && <LoadingMask/>}
-
-            {(isStripeFetched && stripeData?.client_secret && stripePromise) && (
-                <Elements options={{
-                    clientSecret: stripeData?.client_secret,
-                    loader: 'always',
-                }} stripe={stripePromise}>
-                    <StripeCheckoutForm/>
-                </Elements>
-            )}
-        </>
-    );
+    return <LoadingMask/>;
 }
 
 export default Payment;

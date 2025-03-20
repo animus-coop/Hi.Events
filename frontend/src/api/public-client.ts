@@ -1,6 +1,6 @@
 import axios from "axios";
 import {isSsr} from "../utilites/helpers";
-import {getConfig} from "../utilites/config";
+// import {getConfig} from "../utilites/config";
 
 export const publicApi = axios.create();
 
@@ -12,8 +12,8 @@ if (existingToken) {
 
 publicApi.interceptors.request.use((config) => {
     const baseUrl = isSsr()
-        ? "https://ticketera.animus.coop/api"
-        : "https://ticketera.animus.coop/api";
+        ? process.env.VITE_API_URL_SERVER
+        : process.env.VITE_API_URL_CLIENT;
 
     config.baseURL = `${baseUrl}/public`;
     return config;

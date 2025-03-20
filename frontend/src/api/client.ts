@@ -1,11 +1,9 @@
 import axios from "axios";
 import {setAuthToken} from "../utilites/apiClient.ts";
-import {isSsr} from "../utilites/helpers.ts";
-import {getConfig} from "../utilites/config.ts";
+// import {isSsr} from "../utilites/helpers.ts";
+// import {getConfig} from "../utilites/config.ts";
 
-const BASE_URL = isSsr()
-    ? "https://ticketera.animus.coop/api"
-    : "https://ticketera.animus.coop/api";
+const BASE_URL = "https://localhost:8443/api";
 const LOGIN_PATH = "/auth/login";
 const PREVIOUS_URL_KEY = 'previous_url';
 

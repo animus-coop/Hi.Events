@@ -13,6 +13,9 @@ class OrderDomainObject extends Generated\OrderDomainObjectAbstract implements I
     /** @var Collection<OrderItemDomainObject>|null */
     public ?Collection $orderItems = null;
 
+    /** @var EventDomainObject|null */
+    public ?EventDomainObject $event = null;
+
     /** @var Collection<AttendeeDomainObject>|null */
     public ?Collection $attendees = null;
 
@@ -70,12 +73,23 @@ class OrderDomainObject extends Generated\OrderDomainObjectAbstract implements I
         return $this;
     }
 
+    public function setEvent(?EventDomainObject $event): OrderDomainObject
+    {
+        $this->event = $event;
+        return $this;
+    }
+
     /**
      * @return Collection<OrderItemDomainObject>|null
      */
     public function getOrderItems(): ?Collection
     {
         return $this->orderItems;
+    }
+
+    public function getEvent(): ?EventDomainObject
+    {
+        return $this->event;
     }
 
     public function setAttendees(?Collection $attendees): OrderDomainObject
