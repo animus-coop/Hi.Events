@@ -82,4 +82,15 @@
       'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
     ),
   ),
+  'virtual-queue/token-verifier-laravel' => 
+  array (
+    'aliases' => 
+    array (
+      'TokenVerifier' => 'VirtualQueue\\TokenVerifier\\Laravel\\Facades\\TokenVerifier',
+    ),
+    'providers' => 
+    array (
+      0 => 'VirtualQueue\\TokenVerifier\\Laravel\\TokenVerifierServiceProvider',
+    ),
+  ),
 );

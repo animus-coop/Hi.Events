@@ -2,7 +2,10 @@
     "name": "hieventsdev/hi.events",
     "type": "project",
     "description": "hi.events - Ticket selling and event management.",
-    "keywords": ["ticketing", "events"],
+    "keywords": [
+        "ticketing",
+        "events"
+    ],
     "license": "Elastic License",
     "version": "0.0.1",
     "require": {
@@ -22,7 +25,9 @@
         "nette/php-generator": "^4.0",
         "php-open-source-saver/jwt-auth": "^2.1",
         "spatie/icalendar-generator": "^2.8",
-        "stripe/stripe-php": "^10.15"
+        "stripe/stripe-php": "^10.15",
+        "virtual-queue/token-verifier": "dev-main",
+        "virtual-queue/token-verifier-laravel": "^0.0.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

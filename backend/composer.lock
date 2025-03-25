@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32bb98665871a6f1ba09e7feb248ba3e",
+    "content-hash": "f2910c16a4582040313d8b27ad9b008d",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -7577,6 +7577,107 @@
             "time": "2023-12-08T13:03:43+00:00"
         },
         {
+            "name": "virtual-queue/token-verifier",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/animus-coop/virtual-queue-token-verifier.git",
+                "reference": "4c1240e24c05c5af4a0515f380d6fbcab38339f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/animus-coop/virtual-queue-token-verifier/zipball/4c1240e24c05c5af4a0515f380d6fbcab38339f7",
+                "reference": "4c1240e24c05c5af4a0515f380d6fbcab38339f7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "VirtualQueue\\TokenVerifier\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Julian Somoza @ Animus",
+                    "email": "julian@animus.com.ar"
+                }
+            ],
+            "description": "SDK to verify virtual queue tokens",
+            "support": {
+                "issues": "https://github.com/animus-coop/virtual-queue-token-verifier/issues",
+                "source": "https://github.com/animus-coop/virtual-queue-token-verifier/tree/main"
+            },
+            "time": "2025-03-21T19:27:33+00:00"
+        },
+        {
+            "name": "virtual-queue/token-verifier-laravel",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/animus-coop/virtual-queue-token-verifier-laravel.git",
+                "reference": "80408e45a5da4da14346cffb274cb397280787fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/animus-coop/virtual-queue-token-verifier-laravel/zipball/80408e45a5da4da14346cffb274cb397280787fa",
+                "reference": "80408e45a5da4da14346cffb274cb397280787fa",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.0",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "TokenVerifier": "VirtualQueue\\TokenVerifier\\Laravel\\Facades\\TokenVerifier"
+                    },
+                    "providers": [
+                        "VirtualQueue\\TokenVerifier\\Laravel\\TokenVerifierServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "VirtualQueue\\TokenVerifier\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Julian Somoza @ Animus",
+                    "email": "julian@animus.com.ar"
+                }
+            ],
+            "description": "SDK to verify virtual queue tokens for Laravel",
+            "support": {
+                "issues": "https://github.com/animus-coop/virtual-queue-token-verifier-laravel/issues",
+                "source": "https://github.com/animus-coop/virtual-queue-token-verifier-laravel/tree/v0.0.1"
+            },
+            "time": "2025-03-25T15:46:42+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.6.0",
             "source": {
@@ -10233,7 +10334,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "virtual-queue/token-verifier": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

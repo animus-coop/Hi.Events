@@ -14,6 +14,7 @@ publicApi.interceptors.request.use((config) => {
     const baseUrl = isSsr()
         ? process.env.VITE_API_URL_SERVER
         : process.env.VITE_API_URL_CLIENT;
+    console.log(baseUrl);
 
     config.baseURL = `${baseUrl}/public`;
     return config;

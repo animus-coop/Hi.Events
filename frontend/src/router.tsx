@@ -317,7 +317,8 @@ export const router: RouteObject[] = [
                 const url = new URL(request.url)
                 const queryParams = new URLSearchParams(url.search);
                 const promoCode = queryParams.get("promo_code") ?? null
-                const {data: event} = await eventsClientPublic.findByID(params.eventId, promoCode);
+                const token = queryParams.get("token") ?? null
+                const {data: event} = await eventsClientPublic.findByID(params.eventId, promoCode, token);
                 let promoCodeValid: undefined | boolean = undefined;
                 if (promoCode) {
                     promoCodeValid = (await promoCodeClientPublic.validateCode(params.eventId, promoCode)).valid;

@@ -91,8 +91,8 @@ export const eventsClientPublic = {
         return response.data;
     },
 
-    findByID: async (eventId: any, promoCode: null | string) => {
-        const response = await publicApi.get<GenericDataResponse<Event>>('events/' + eventId + (promoCode ? '?promo_code=' + promoCode : ''));
+    findByID: async (eventId: IdParam, promoCode: null | string, token: null |string) => {
+        const response = await publicApi.get<GenericDataResponse<Event>>('events/' + eventId + '?' + (promoCode ? '&promo_code=' + promoCode : '') + (token ? '&token=' + token : ''));
         return response.data;
     },
 }

@@ -11,6 +11,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Psr\Log\LoggerInterface;
+use VirtualQueue\TokenVerifier\Laravel\Facades\TokenVerifier;
 
 class GetEventPublicAction extends BaseAction
 {
@@ -23,6 +24,25 @@ class GetEventPublicAction extends BaseAction
 
     public function __invoke(int $eventId, Request $request): Response|JsonResponse
     {
+        if ($request->token) {
+            $result = TokenVerifier::verifyToken($request->token);
+            $this->logger->debug('Validating token');
+
+            // Solo si queremos true o false
+            // $isValid = TokenVerifier::isTokenValid($request->token);
+            // $this->logger->debug(__('Token is valid', [
+            //     'token_validity' => $isValid
+            // ]));
+
+            if (isset($result['success']) && $result['success'] == false) {
+                $this->logger->debug(__('Token is invalid: :message', [
+                    'message' => json_encode($result['message'])
+                ]));
+
+                return $this->notFoundResponse();
+            }
+        }
+
         $event = $this->handler->handle(GetPublicEventDTO::fromArray([
             'eventId' => $eventId,
             'ipAddress' => $this->getClientIp($request),
