@@ -2195,7 +2195,7 @@ msgstr "Mensaje posterior al pago"
 
 #: src/components/common/PoweredByFooter/index.tsx:28
 msgid "Powered by"
-msgstr "Energizado por"
+msgstr "Hecho por"
 
 #: src/components/forms/StripeCheckoutForm/index.tsx:136
 msgid "Powered by Stripe"
@@ -2436,7 +2436,7 @@ msgstr "San Francisco"
 #: src/components/routes/event/Settings/Sections/MiscSettings/index.tsx:94
 #: src/components/routes/event/Settings/Sections/SeoSettings/index.tsx:85
 msgid "Save"
-msgstr "Ahorrar"
+msgstr "Guardar"
 
 #: src/components/routes/event/HomepageDesigner/index.tsx:143
 msgid "Save Changes"
