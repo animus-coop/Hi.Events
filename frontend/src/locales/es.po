@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: Hi.Events\n"
+"Project-Id-Version: Entradas Ya\n"
 "Language: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
@@ -123,7 +123,7 @@ msgstr "Una tarifa, como una tarifa de reserva o una tarifa de servicio"
 
 #: src/components/forms/TaxAndFeeForm/index.tsx:35
 msgid "A fixed amount per ticket. E.g, $0.50 per ticket"
-msgstr "Una cantidad fija por billete. Por ejemplo, $0,50 por boleto"
+msgstr "Un monto fijo por billete. Por ejemplo, $0,50 por boleto"
 
 #: src/components/forms/QuestionForm/index.tsx:106
 msgid "A multi line text input"
@@ -1397,16 +1397,16 @@ msgstr "Aquí está el componente React que puede usar para incrustar el widget 
 #: src/components/modals/CreateEventModal/index.tsx:112
 #: src/components/modals/DuplicateEventModal/index.tsx:70
 #: src/components/routes/event/Settings/Sections/EventDetailsForm/index.tsx:73
-msgid "Hi.Events Conference {0}"
-msgstr "Hola.Eventos Conferencia {0}"
+msgid "Entradas Ya Conference {0}"
+msgstr "Entradas Ya Conferencia {0}"
 
 #: src/components/routes/event/Settings/Sections/LocationSettings/index.tsx:108
-msgid "Hi.Events Conference Center"
-msgstr "Centro de conferencias Hi.Events"
+msgid "Entradas Ya Conference Center"
+msgstr "Centro de conferencias Entradas Ya"
 
 #: src/components/layouts/AuthLayout/index.tsx:24
-msgid "hi.events logo"
-msgstr "hola.eventos logo"
+msgid "Entradas Ya logo"
+msgstr "Entradas Ya logo"
 
 #: src/components/common/TicketsTable/SortableTicket/index.tsx:77
 msgid "Hidden from public view"
@@ -2195,7 +2195,7 @@ msgstr "Mensaje posterior al pago"
 
 #: src/components/common/PoweredByFooter/index.tsx:28
 msgid "Powered by"
-msgstr "Energizado por"
+msgstr "Hecho por"
 
 #: src/components/forms/StripeCheckoutForm/index.tsx:136
 msgid "Powered by Stripe"
@@ -2436,7 +2436,7 @@ msgstr "San Francisco"
 #: src/components/routes/event/Settings/Sections/MiscSettings/index.tsx:94
 #: src/components/routes/event/Settings/Sections/SeoSettings/index.tsx:85
 msgid "Save"
-msgstr "Ahorrar"
+msgstr "Guardar"
 
 #: src/components/routes/event/HomepageDesigner/index.tsx:143
 msgid "Save Changes"
@@ -3319,8 +3319,8 @@ msgid "Welcome back{0} 👋"
 msgstr "Bienvenido de nuevo{0} 👋"
 
 #: src/components/routes/welcome/index.tsx:125
-msgid "Welcome to Hi.Events, {0} 👋"
-msgstr "Bienvenido a Hola.Eventos, {0} 👋"
+msgid "Welcome to Entradas Ya, {0} 👋"
+msgstr "Bienvenido a Entradas Ya, {0} 👋"
 
 #: src/components/forms/TicketForm/index.tsx:202
 msgid "What are Tiered Tickets?"
