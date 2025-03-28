@@ -27,10 +27,10 @@ export const PoweredByFooter = (props: React.DetailedHTMLProps<React.HTMLAttribu
             <div className={classes.poweredByText}>
                 {t`Powered by`}{'  '}
                 {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                <a href="https://hi.events?utm_source=app-powered-by-footer"
+                <a href="https://entradasya.com.ar"
                    target="_blank"
-                   title={'Effortlessly manage events and sell tickets online with Hi.Events'}>
-                    Hi.Events
+                   title={'Effortlessly manage events and sell tickets online with Entradas Ya!'}>
+                    Entradas Ya!
                 </a> 🚀
             </div>
         </div>

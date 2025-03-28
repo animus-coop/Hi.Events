@@ -123,7 +123,7 @@ msgstr "Una tarifa, como una tarifa de reserva o una tarifa de servicio"
 
 #: src/components/forms/TaxAndFeeForm/index.tsx:35
 msgid "A fixed amount per ticket. E.g, $0.50 per ticket"
-msgstr "Un monto fijo por billete. Por ejemplo, $0,50 por boleto"
+msgstr "Un monto fijo por billete. Por ejemplo, $0,50 por entrada"
 
 #: src/components/forms/QuestionForm/index.tsx:106
 msgid "A multi line text input"
@@ -327,7 +327,7 @@ msgstr "Se produjo un error al ordenar las preguntas. Inténtalo de nuevo o actu
 
 #: src/components/common/TicketsTable/index.tsx:46
 msgid "An error occurred while sorting the tickets. Please try again or refresh the page"
-msgstr "Se produjo un error al clasificar los boletos. Inténtalo de nuevo o actualiza la página."
+msgstr "Se produjo un error al clasificar los entradas. Inténtalo de nuevo o actualiza la página."
 
 #: src/components/routes/welcome/index.tsx:75
 msgid "An event is the actual event you are hosting. You can add more details later."
@@ -371,7 +371,7 @@ msgstr "¿Está seguro de que desea activar este asistente?"
 
 #: src/components/common/AttendeeTable/index.tsx:85
 msgid "Are you sure you want to cancel this attendee? This will void their ticket"
-msgstr "¿Está seguro de que desea cancelar este asistente? Esto anulará su boleto."
+msgstr "¿Está seguro de que desea cancelar este asistente? Esto anulará su entrada."
 
 #: src/components/common/PromoCodeTable/index.tsx:36
 msgid "Are you sure you want to delete this promo code?"
@@ -476,7 +476,7 @@ msgstr "Antes de que su evento pueda comenzar, hay algunas cosas que debe hacer.
 
 #: src/components/routes/auth/Register/index.tsx:49
 msgid "Begin selling tickets in minutes"
-msgstr "Comience a vender boletos en minutos"
+msgstr "Comience a vender entradas en minutos"
 
 #: src/components/common/LanguageSwitcher/index.tsx:24
 msgid "Brazilian Portuguese"
@@ -523,7 +523,7 @@ msgstr "Cancelar pedido {0}"
 
 #: src/components/modals/CancelOrderModal/index.tsx:54
 msgid "Canceling will cancel all tickets associated with this order, and release the tickets back into the available pool."
-msgstr "La cancelación cancelará todos los boletos asociados con este pedido y los liberará nuevamente al grupo disponible."
+msgstr "La cancelación cancelará todos los entradas asociados con este pedido y los liberará nuevamente al grupo disponible."
 
 #: src/components/common/AttendeeTicket/index.tsx:61
 msgid "Cancelled"
@@ -791,7 +791,7 @@ msgstr "Crear un código promocional"
 
 #: src/components/common/TicketsTable/index.tsx:74
 msgid "Create a Ticket"
-msgstr "Crear un boleto"
+msgstr "Crear un entrada"
 
 #: src/components/routes/auth/Register/index.tsx:51
 msgid "Create an account or <0>{0}</0> to get started"
@@ -856,7 +856,7 @@ msgstr "Creado"
 #: src/components/routes/account/ManageAccount/sections/AccountSettings/index.tsx:73
 #: src/components/routes/event/Settings/Sections/EventDetailsForm/index.tsx:100
 msgid "Currency"
-msgstr "Divisa"
+msgstr "Moneda"
 
 #: src/components/routes/profile/ManageProfile/index.tsx:191
 msgid "Current Password"
@@ -1014,7 +1014,7 @@ msgstr "Duplicar configuraciones"
 
 #: src/components/modals/DuplicateEventModal/index.tsx:95
 msgid "Duplicate Tickets"
-msgstr "Duplicar boletos"
+msgstr "Duplicar entradas"
 
 #: src/components/forms/TicketForm/index.tsx:75
 msgid "Early bird"
@@ -1339,7 +1339,7 @@ msgstr "Gratis"
 
 #: src/components/forms/TicketForm/index.tsx:133
 msgid "Free Ticket"
-msgstr "Boleto gratis"
+msgstr "entrada gratis"
 
 #: src/components/forms/TicketForm/index.tsx:135
 msgid "Free ticket, no payment information required"
@@ -1455,11 +1455,11 @@ msgstr "Ocultar este nivel a los usuarios"
 
 #: src/components/forms/TicketForm/index.tsx:317
 msgid "Hide ticket after sale end date"
-msgstr "Ocultar boleto después de la fecha de finalización de la venta"
+msgstr "Ocultar entrada después de la fecha de finalización de la venta"
 
 #: src/components/forms/TicketForm/index.tsx:315
 msgid "Hide ticket before sale start date"
-msgstr "Ocultar boleto antes de la fecha de inicio de venta"
+msgstr "Ocultar entrada antes de la fecha de inicio de venta"
 
 #: src/components/forms/TicketForm/index.tsx:328
 msgid "Hide ticket unless user has applicable promo code"
@@ -1555,7 +1555,7 @@ msgstr "Los usuarios inactivos no pueden iniciar sesión."
 
 #: src/components/routes/event/Settings/Sections/LocationSettings/index.tsx:99
 msgid "Include connection details for your online event. These details will be shown on the order summary page and attendee ticket page"
-msgstr "Incluya detalles de conexión para su evento en línea. Estos detalles se mostrarán en la página de resumen del pedido y en la página de boletos de asistente."
+msgstr "Incluya detalles de conexión para su evento en línea. Estos detalles se mostrarán en la página de resumen del pedido y en la página de entradas de asistente."
 
 #: src/components/routes/event/Settings/Sections/MiscSettings/index.tsx:54
 msgid "Include tax and fees in the price"
@@ -2064,7 +2064,7 @@ msgstr "pagado"
 
 #: src/components/forms/TicketForm/index.tsx:127
 msgid "Paid Ticket"
-msgstr "Boleto pagado"
+msgstr "entrada pagado"
 
 #: src/components/routes/auth/Login/index.tsx:58
 #: src/components/routes/auth/Register/index.tsx:80
@@ -2175,7 +2175,7 @@ msgstr "Por favor seleccione"
 
 #: src/components/routes/ticket-widget/SelectTickets/index.tsx:215
 msgid "Please select at least one ticket"
-msgstr "Por favor seleccione al menos un boleto"
+msgstr "Por favor seleccione al menos un entrada"
 
 #: src/components/routes/profile/ManageProfile/index.tsx:142
 msgid "Please verify your email address to access all features"
@@ -2523,7 +2523,7 @@ msgstr "Seleccionar billete"
 #: src/components/modals/CreateAttendeeModal/index.tsx:163
 #: src/components/modals/EditAttendeeModal/index.tsx:117
 msgid "Select Ticket Tier"
-msgstr "Seleccionar nivel de boleto"
+msgstr "Seleccionar nivel de entrada"
 
 #: src/components/forms/TicketForm/index.tsx:270
 msgid "Select..."
@@ -2773,7 +2773,7 @@ msgstr "Pregunta creada correctamente"
 
 #: src/components/modals/CreateTicketModal/index.tsx:49
 msgid "Successfully Created Ticket"
-msgstr "Boleto creado exitosamente"
+msgstr "entrada creado exitosamente"
 
 #: src/components/modals/EditAttendeeModal/index.tsx:60
 msgid "Successfully updated attendee"
@@ -2813,7 +2813,7 @@ msgstr "Configuración de SEO actualizada con éxito"
 
 #: src/components/modals/EditTicketModal/index.tsx:83
 msgid "Successfully updated ticket"
-msgstr "Boleto actualizado exitosamente"
+msgstr "entrada actualizado exitosamente"
 
 #: src/components/routes/event/Settings/Sections/LocationSettings/index.tsx:119
 msgid "Suite 100"
@@ -3009,7 +3009,7 @@ msgstr "Este usuario no está activo porque no ha aceptado su invitación."
 
 #: src/components/common/AttendeeTable/index.tsx:211
 msgid "ticket"
-msgstr "boleto"
+msgstr "entrada"
 
 #: src/components/common/AttendeeDetails/index.tsx:46
 #: src/components/common/AttendeeTable/index.tsx:119
@@ -3017,11 +3017,11 @@ msgstr "boleto"
 #: src/components/modals/EditAttendeeModal/index.tsx:108
 #: src/components/modals/ViewAttendeeModal/index.tsx:55
 msgid "Ticket"
-msgstr "Boleto"
+msgstr "entrada"
 
 #: src/components/common/TicketsTable/SortableTicket/index.tsx:52
 msgid "Ticket deleted successfully"
-msgstr "Boleto eliminado exitosamente"
+msgstr "entrada eliminado exitosamente"
 
 #: src/components/common/AttendeeTable/index.tsx:57
 msgid "Ticket email has been resent to attendee"
@@ -3029,17 +3029,17 @@ msgstr "El correo electrónico del ticket se ha reenviado al asistente."
 
 #: src/components/routes/event/EventDashboard/index.tsx:53
 msgid "Ticket Sales"
-msgstr "Venta de boletos"
+msgstr "Venta de entradas"
 
 #: src/components/modals/CreateAttendeeModal/index.tsx:161
 #: src/components/modals/EditAttendeeModal/index.tsx:115
 msgid "Ticket Tier"
-msgstr "Nivel de boletos"
+msgstr "Nivel de entradas"
 
 #: src/components/forms/TicketForm/index.tsx:189
 #: src/components/forms/TicketForm/index.tsx:196
 msgid "Ticket Type"
-msgstr "Tipo de billete"
+msgstr "Tipo de entrada"
 
 #: src/components/common/WidgetEditor/index.tsx:311
 msgid "Ticket Widget Preview"
@@ -3078,7 +3078,7 @@ msgstr "Nivel {0}"
 
 #: src/components/forms/TicketForm/index.tsx:145
 msgid "Tiered Ticket"
-msgstr "Boleto escalonado"
+msgstr "entrada escalonado"
 
 #: src/components/forms/TicketForm/index.tsx:203
 msgid ""
@@ -3086,7 +3086,7 @@ msgid ""
 "This is perfect for early bird tickets, or offering different price\n"
 "options for different groups of people."
 msgstr ""
-"Los boletos escalonados le permiten ofrecer múltiples opciones de precios para el mismo boleto.\n"
+"Los entradas escalonados le permiten ofrecer múltiples opciones de precios para el mismo entrada.\n"
 "Esto es perfecto para entradas anticipadas o para ofrecer precios diferentes.\n"
 "opciones para diferentes grupos de personas."
 
@@ -3324,7 +3324,7 @@ msgstr "Bienvenido a Entradas Ya, {0} 👋"
 
 #: src/components/forms/TicketForm/index.tsx:202
 msgid "What are Tiered Tickets?"
-msgstr "¿Qué son los boletos escalonados?"
+msgstr "¿Qué son los entradas escalonados?"
 
 #: src/components/forms/PromoCodeForm/index.tsx:67
 msgid "What tickets does this code apply to? (Applies to all by default)"
@@ -3405,7 +3405,7 @@ msgstr "No puede cambiar el tipo de entrada ya que hay asistentes asociados a es
 
 #: src/components/forms/TicketForm/index.tsx:53
 msgid "You cannot delete this price tier because there are already tickets sold for this tier. You can hide it instead."
-msgstr "No puedes eliminar este nivel de precios porque ya hay boletos vendidos para este nivel. Puedes ocultarlo en su lugar."
+msgstr "No puedes eliminar este nivel de precios porque ya hay entradas vendidos para este nivel. Puedes ocultarlo en su lugar."
 
 #: src/components/modals/EditUserModal/index.tsx:88
 msgid "You cannot edit the role or status of the account owner."
@@ -3457,7 +3457,7 @@ msgstr "No has conectado tu cuenta de Stripe"
 
 #: src/components/forms/TicketForm/index.tsx:292
 msgid "You have taxes and fees added to a Free Ticket. Would you like to remove or obscure them?"
-msgstr "Tiene impuestos y tarifas agregados a un boleto gratis. ¿Le gustaría eliminarlos u ocultarlos?"
+msgstr "Tiene impuestos y tarifas agregados a un entrada gratis. ¿Le gustaría eliminarlos u ocultarlos?"
 
 #: src/components/common/MessageList/index.tsx:64
 msgid "You haven't sent any messages yet. You can send messages to all attendees, or to specific ticket holders."
@@ -3489,7 +3489,7 @@ msgstr "Debes verificar tu cuenta antes de poder enviar mensajes."
 
 #: src/components/common/TicketsTable/index.tsx:68
 msgid "You'll need at least one ticket to get started. Free, paid or let the user decide what to pay."
-msgstr "Necesitará al menos un boleto para comenzar. Gratis, de pago o deja que el usuario decida qué pagar."
+msgstr "Necesitará al menos un entrada para comenzar. Gratis, de pago o deja que el usuario decida qué pagar."
 
 #: src/components/routes/account/ManageAccount/sections/AccountSettings/index.tsx:64
 msgid "Your account name is used on event pages and in emails."
