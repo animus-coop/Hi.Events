@@ -5,7 +5,7 @@ import classes from "./EventHomepage.module.scss";
 import {t} from "@lingui/macro";
 import SelectTickets from "../../routes/ticket-widget/SelectTickets";
 import "../../../styles/widget/default.scss";
-import React from "react";
+import React, { useEffect } from "react";
 import {EventDocumentHead} from "../../common/EventDocumentHead";
 import {eventCoverImageUrl} from "../../../utilites/urlHelper.ts";
 import {Event} from "../../../types.ts";
@@ -44,6 +44,17 @@ const EventHomepage = ({colors, continueButtonText, backgroundType, ...loaderDat
         "--homepage-secondary-text-color":
             colors?.secondaryText || event?.settings?.homepage_secondary_text_color,
     } as React.CSSProperties;
+
+    useEffect(() => {
+        const script = document.createElement("script");
+        script.src = "https://app.virtual-queue.com/assets/sensor.js?token=db6ff71d-f414-44df-853e-173f54b63ee9";
+        script.async = true;
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
 
     if (!event) {
         return <HomepageInfoMessage message={t`This event is not available.`}/>;
