@@ -40,7 +40,7 @@ class CheckMercadoPagoAction extends BaseAction
                 if ($payment->status == 'approved') {
                     $order = $this->orderRepository
                         ->loadRelation(OrderItemDomainObject::class)
-                        ->updateFromArray($order->getId(), [
+                        ->updateFromArray($order->id, [
                             OrderDomainObjectAbstract::PAYMENT_STATUS => OrderPaymentStatus::PAYMENT_RECEIVED->name,
                             OrderDomainObjectAbstract::STATUS => OrderStatus::COMPLETED->name,
                         ]);
@@ -49,7 +49,7 @@ class CheckMercadoPagoAction extends BaseAction
                 } else {
                     $order = $this->orderRepository
                         ->loadRelation(OrderItemDomainObject::class)
-                        ->updateFromArray($order->getId(), [
+                        ->updateFromArray($order->id, [
                             OrderDomainObjectAbstract::PAYMENT_STATUS => OrderPaymentStatus::PAYMENT_FAILED->name,
                             OrderDomainObjectAbstract::STATUS => OrderStatus::CANCELLED->name,
                         ]);
@@ -64,7 +64,7 @@ class CheckMercadoPagoAction extends BaseAction
         } else {
             $order = $this->orderRepository
                 ->loadRelation(OrderItemDomainObject::class)
-                ->updateFromArray($order->getId(), [
+                ->updateFromArray($order->id, [
                     OrderDomainObjectAbstract::PAYMENT_STATUS => OrderPaymentStatus::PAYMENT_FAILED->name,
                     OrderDomainObjectAbstract::STATUS => OrderStatus::CANCELLED->name,
                 ]);
