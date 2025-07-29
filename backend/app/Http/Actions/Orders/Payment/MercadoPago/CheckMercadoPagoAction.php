@@ -8,6 +8,7 @@ use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
 use MercadoPago\Client\Payment\PaymentClient;
 use MercadoPago\Exceptions\MPApiException;
+use HiEvents\Events\OrderStatusChangedEvent;
 use HiEvents\Models\Order;
 use HiEvents\DomainObjects\Status\OrderPaymentStatus;
 use HiEvents\DomainObjects\Status\OrderStatus;
@@ -32,6 +33,8 @@ class CheckMercadoPagoAction extends BaseAction
                     $order->payment_status = OrderPaymentStatus::PAYMENT_RECEIVED->name;
                     $order->status = OrderStatus::COMPLETED->name;
                     $order->save();
+
+                    OrderStatusChangedEvent::dispatch($order);
                 } else {
                     $order->payment_status = OrderPaymentStatus::PAYMENT_FAILED->name;
                     $order->status = OrderStatus::CANCELLED->name;
