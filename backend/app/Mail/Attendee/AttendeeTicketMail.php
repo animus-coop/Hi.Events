@@ -27,8 +27,7 @@ class AttendeeTicketMail extends BaseMail
         private readonly EventDomainObject        $event,
         private readonly EventSettingDomainObject $eventSettings,
         private readonly OrganizerDomainObject    $organizer,
-    )
-    {
+    ) {
         parent::__construct();
     }
 
@@ -52,7 +51,7 @@ class AttendeeTicketMail extends BaseMail
                 'eventSettings' => $this->eventSettings,
                 'organizer' => $this->organizer,
                 'ticketUrl' => sprintf(
-                    Url::getFrontEndUrlFromConfig(Url::ATTENDEE_TICKET),
+                    Url::getFrontEndUrlFromConfig(Url::ORDER_SUMMARY),
                     $this->event->getId(),
                     $this->attendee->getShortId(),
                 )
