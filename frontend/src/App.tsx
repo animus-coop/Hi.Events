@@ -86,7 +86,7 @@ export const App: FC<
                             <StartupChecks/>
                             <ModalsProvider>
                                 <Helmet>
-                                    <title>Hi.Events</title>
+                                    <title>Entradas Ya!</title>
                                 </Helmet>
                                 {props.children}
                             </ModalsProvider>
