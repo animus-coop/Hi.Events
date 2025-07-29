@@ -72,7 +72,7 @@ class CheckMercadoPagoAction extends BaseAction
             OrderStatusChangedEvent::dispatch($order);
         }
 
-        return redirect(env('APP_FRONTEND_URL') . '/checkout/' . $order->event_id . '/' . $shortId . '/summary');
+        return redirect(env('APP_FRONTEND_URL') . '/checkout/' . $order->getEventId() . '/' . $shortId . '/summary');
     }
 
     protected function authenticate()
