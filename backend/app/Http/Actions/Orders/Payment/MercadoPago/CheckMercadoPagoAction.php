@@ -28,7 +28,7 @@ class CheckMercadoPagoAction extends BaseAction
     public function __invoke(Request $request)
     {
         $shortId = $request->external_reference;
-        $order = Order::where('short_id', $shortId)->first();
+        $order = $this->orderRepository->findByShortId($shortId);
 
         if ($request->collection_status == 'approved') {
             $this->authenticate();
@@ -40,7 +40,7 @@ class CheckMercadoPagoAction extends BaseAction
                 if ($payment->status == 'approved') {
                     $order = $this->orderRepository
                         ->loadRelation(OrderItemDomainObject::class)
-                        ->updateFromArray($order->id, [
+                        ->updateFromArray($order->getId(), [
                             OrderDomainObjectAbstract::PAYMENT_STATUS => OrderPaymentStatus::PAYMENT_RECEIVED->name,
                             OrderDomainObjectAbstract::STATUS => OrderStatus::COMPLETED->name,
                         ]);
@@ -49,7 +49,7 @@ class CheckMercadoPagoAction extends BaseAction
                 } else {
                     $order = $this->orderRepository
                         ->loadRelation(OrderItemDomainObject::class)
-                        ->updateFromArray($order->id, [
+                        ->updateFromArray($order->getId(), [
                             OrderDomainObjectAbstract::PAYMENT_STATUS => OrderPaymentStatus::PAYMENT_FAILED->name,
                             OrderDomainObjectAbstract::STATUS => OrderStatus::CANCELLED->name,
                         ]);
@@ -64,7 +64,7 @@ class CheckMercadoPagoAction extends BaseAction
         } else {
             $order = $this->orderRepository
                 ->loadRelation(OrderItemDomainObject::class)
-                ->updateFromArray($order->id, [
+                ->updateFromArray($order->getId(), [
                     OrderDomainObjectAbstract::PAYMENT_STATUS => OrderPaymentStatus::PAYMENT_FAILED->name,
                     OrderDomainObjectAbstract::STATUS => OrderStatus::CANCELLED->name,
                 ]);
