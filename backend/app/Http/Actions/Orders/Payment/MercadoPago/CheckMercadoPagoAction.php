@@ -10,13 +10,21 @@ use MercadoPago\Client\Payment\PaymentClient;
 use MercadoPago\Exceptions\MPApiException;
 use HiEvents\Events\OrderStatusChangedEvent;
 use HiEvents\Models\Order;
+use HiEvents\DomainObjects\Generated\OrderDomainObjectAbstract;
+use HiEvents\DomainObjects\OrderItemDomainObject;
 use HiEvents\DomainObjects\Status\OrderPaymentStatus;
 use HiEvents\DomainObjects\Status\OrderStatus;
+
+use HiEvents\Repository\Interfaces\OrderRepositoryInterface;
 
 use HiEvents\Http\Actions\BaseAction;
 
 class CheckMercadoPagoAction extends BaseAction
 {
+    public function __construct(
+        private OrderRepositoryInterface        $orderRepository
+    ) {}
+
     public function __invoke(Request $request)
     {
         $shortId = $request->external_reference;
@@ -30,15 +38,23 @@ class CheckMercadoPagoAction extends BaseAction
                 $payment = $client->get($request->collection_id);
 
                 if ($payment->status == 'approved') {
-                    $order->payment_status = OrderPaymentStatus::PAYMENT_RECEIVED->name;
-                    $order->status = OrderStatus::COMPLETED->name;
-                    $order->save();
+                    $order = $this->orderRepository
+                        ->loadRelation(OrderItemDomainObject::class)
+                        ->updateFromArray($order->getId(), [
+                            OrderDomainObjectAbstract::PAYMENT_STATUS => OrderPaymentStatus::PAYMENT_RECEIVED->name,
+                            OrderDomainObjectAbstract::STATUS => OrderStatus::COMPLETED->name,
+                        ]);
 
                     OrderStatusChangedEvent::dispatch($order);
                 } else {
-                    $order->payment_status = OrderPaymentStatus::PAYMENT_FAILED->name;
-                    $order->status = OrderStatus::CANCELLED->name;
-                    $order->save();
+                    $order = $this->orderRepository
+                        ->loadRelation(OrderItemDomainObject::class)
+                        ->updateFromArray($order->getId(), [
+                            OrderDomainObjectAbstract::PAYMENT_STATUS => OrderPaymentStatus::PAYMENT_FAILED->name,
+                            OrderDomainObjectAbstract::STATUS => OrderStatus::CANCELLED->name,
+                        ]);
+
+                    OrderStatusChangedEvent::dispatch($order);
                 }
             } catch (MPApiException $e) {
                 return $this->jsonResponse([
@@ -46,9 +62,14 @@ class CheckMercadoPagoAction extends BaseAction
                 ]);
             }
         } else {
-            $order->payment_status = OrderPaymentStatus::PAYMENT_FAILED->name;
-            $order->status = OrderStatus::CANCELLED->name;
-            $order->save();
+            $order = $this->orderRepository
+                ->loadRelation(OrderItemDomainObject::class)
+                ->updateFromArray($order->getId(), [
+                    OrderDomainObjectAbstract::PAYMENT_STATUS => OrderPaymentStatus::PAYMENT_FAILED->name,
+                    OrderDomainObjectAbstract::STATUS => OrderStatus::CANCELLED->name,
+                ]);
+
+            OrderStatusChangedEvent::dispatch($order);
         }
 
         return redirect(env('APP_FRONTEND_URL') . '/checkout/' . $order->event_id . '/' . $shortId . '/summary');
